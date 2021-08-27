@@ -1,8 +1,8 @@
 package unitconv
 
 type Temperature struct {
-	fromValue float64
-	fromUnit  int
+	FromValue float64
+	FromUnit  int
 }
 
 const (
@@ -12,7 +12,7 @@ const (
 )
 
 func (t Temperature) GetToValue(toUnit int) (float64, error) {
-	return t.base2To(t.from2Base(t.fromValue, t.fromUnit), toUnit), nil
+	return t.base2To(t.from2Base(t.FromValue, t.FromUnit), toUnit), nil
 }
 
 func (t Temperature) from2Base(formValue float64, fromUnit int) (baseValue float64) {
