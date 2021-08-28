@@ -7,8 +7,8 @@ import (
 
 func TestTempConv(t *testing.T) {
 	tests := []struct {
-		formValue float64
-		formUnit  int
+		fromValue float64
+		fromUnit  int
 		toUnit    int
 		want      float64
 	}{
@@ -24,7 +24,7 @@ func TestTempConv(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		got, _ := Temperature{test.formValue, test.formUnit}.GetToValue(test.toUnit)
+		got, _ := Temperature{test.fromValue, test.fromUnit}.GetToValue(test.toUnit)
 		if diff := math.Abs(got - test.want); diff > 0.01 {
 			t.Errorf("got %f != want %f", got, test.want)
 		}

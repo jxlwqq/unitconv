@@ -15,14 +15,14 @@ func (t Temperature) GetToValue(toUnit int) (float64, error) {
 	return t.base2To(t.from2Base(t.FromValue, t.FromUnit), toUnit), nil
 }
 
-func (t Temperature) from2Base(formValue float64, fromUnit int) (baseValue float64) {
+func (t Temperature) from2Base(fromValue float64, fromUnit int) (baseValue float64) {
 	switch fromUnit {
 	case Kelvin:
-		baseValue = formValue
+		baseValue = fromValue
 	case Celsius:
-		baseValue = formValue + 273.15
+		baseValue = fromValue + 273.15
 	case Fahrenheit:
-		baseValue = (formValue + 459.67) * 5 / 9
+		baseValue = (fromValue + 459.67) * 5 / 9
 	}
 	return
 }
