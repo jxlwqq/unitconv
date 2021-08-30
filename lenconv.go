@@ -34,9 +34,9 @@ func (l Length) from2Base(fromValue float64, fromUnit int) (baseValue float64) {
 	case Millimeter:
 		baseValue = fromValue / 1000
 	case Micrometer:
-		baseValue = fromValue / 100000
+		baseValue = fromValue / 1000000
 	case Nanometer:
-		baseValue = fromValue / 10e-9
+		baseValue = fromValue / 1000000000
 	case Mile:
 		baseValue = fromValue * 1609.35
 	case Yard:
@@ -46,7 +46,7 @@ func (l Length) from2Base(fromValue float64, fromUnit int) (baseValue float64) {
 	case Inch:
 		baseValue = fromValue * 0.0254
 	case LightYear:
-		baseValue = fromValue * 9.46066e14
+		baseValue = fromValue * 9.46066e15
 	}
 	return
 }
@@ -62,9 +62,9 @@ func (l Length) base2To(baseValue float64, toUint int) (toValue float64) {
 	case Millimeter:
 		toValue = baseValue * 1000
 	case Micrometer:
-		toValue = baseValue * 100000
+		toValue = baseValue * 1000000
 	case Nanometer:
-		toValue = baseValue * 10e-9
+		toValue = baseValue * 1000000000
 	case Mile:
 		toValue = baseValue / 1609.35
 	case Yard:
@@ -74,7 +74,7 @@ func (l Length) base2To(baseValue float64, toUint int) (toValue float64) {
 	case Inch:
 		toValue = baseValue / 0.0254
 	case LightYear:
-		toValue = baseValue / 9.46066e14
+		toValue = baseValue / 9.46066e15
 	}
 	return
 }
