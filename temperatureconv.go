@@ -1,6 +1,6 @@
 package unitconv
 
-type TempConv struct {
+type TemperatureConv struct {
 	From
 	To
 }
@@ -11,8 +11,8 @@ const (
 	Fahrenheit
 )
 
-func NewTempConv(FromValue float64, FromUnit, toUnit int) *TempConv {
-	t := &TempConv{
+func NewTemperatureConv(FromValue float64, FromUnit, toUnit int) *TemperatureConv {
+	t := &TemperatureConv{
 		From{Value: FromValue, Unit: FromUnit},
 		To{Unit: toUnit},
 	}
@@ -22,7 +22,7 @@ func NewTempConv(FromValue float64, FromUnit, toUnit int) *TempConv {
 	return t
 }
 
-func (t *TempConv) conv() {
+func (t *TemperatureConv) conv() {
 	var baseValue float64
 	switch t.From.Unit {
 	case Kelvin:

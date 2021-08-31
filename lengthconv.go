@@ -1,6 +1,6 @@
 package unitconv
 
-type LenConv struct {
+type LengthConv struct {
 	From
 	To
 }
@@ -19,8 +19,8 @@ const (
 	LightYear
 )
 
-func NewLenConv(FromValue float64, FromUnit, toUnit int) *LenConv {
-	l := &LenConv{
+func NewLengthConv(FromValue float64, FromUnit, toUnit int) *LengthConv {
+	l := &LengthConv{
 		From{Value: FromValue, Unit: FromUnit},
 		To{Unit: toUnit},
 	}
@@ -30,7 +30,7 @@ func NewLenConv(FromValue float64, FromUnit, toUnit int) *LenConv {
 	return l
 }
 
-func (l *LenConv) conv() {
+func (l *LengthConv) conv() {
 	var baseValue float64
 	switch l.From.Unit {
 	case Meter:

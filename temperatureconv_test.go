@@ -24,7 +24,7 @@ func TestTempConv(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		conv := NewTempConv(test.fromValue, test.fromUnit, test.toUnit)
+		conv := NewTemperatureConv(test.fromValue, test.fromUnit, test.toUnit)
 		got := conv.To.Value
 		if diff := math.Abs(got - test.want); diff > 0.01 {
 			t.Errorf("got %f != want %f", got, test.want)
