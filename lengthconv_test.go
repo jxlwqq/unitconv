@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestLenConv(t *testing.T) {
+func TestLengthConv(t *testing.T) {
 	tests := []struct {
 		fromValue float64
 		fromUnit  int

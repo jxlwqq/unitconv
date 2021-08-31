@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestTempConv(t *testing.T) {
+func TestTemperatureConv(t *testing.T) {
 	tests := []struct {
 		fromValue float64
 		fromUnit  int
