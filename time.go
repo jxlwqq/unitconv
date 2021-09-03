@@ -51,7 +51,7 @@ func (t *time) GetToValue(toUnit int) (toValue float64, err error) {
 	case Year:
 		baseValue = t.fromValue * 31557600
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	switch toUnit {
@@ -78,7 +78,7 @@ func (t *time) GetToValue(toUnit int) (toValue float64, err error) {
 	case Year:
 		toValue = baseValue / 31557600
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	return

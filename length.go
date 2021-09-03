@@ -53,7 +53,7 @@ func (l *length) GetToValue(toUnit int) (toValue float64, err error) {
 	case LightYear:
 		baseValue = l.fromValue * 9.46066e15
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	switch toUnit {
@@ -80,7 +80,7 @@ func (l *length) GetToValue(toUnit int) (toValue float64, err error) {
 	case LightYear:
 		toValue = baseValue / 9.46066e15
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	return

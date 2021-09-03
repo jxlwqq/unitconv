@@ -29,7 +29,7 @@ func (t *temperature) GetToValue(toUnit int) (toValue float64, err error) {
 	case Fahrenheit:
 		baseValue = (t.fromValue + 459.67) * 5 / 9
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	switch toUnit {
@@ -40,7 +40,7 @@ func (t *temperature) GetToValue(toUnit int) (toValue float64, err error) {
 	case Fahrenheit:
 		toValue = baseValue*9/5 - 459.67
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	return

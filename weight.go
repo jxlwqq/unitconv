@@ -51,7 +51,7 @@ func (w *weight) GetToValue(toUnit int) (toValue float64, err error) {
 	case AtomicMassUnit:
 		baseValue = w.fromValue / 6.022136652e+26
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	switch toUnit {
@@ -76,7 +76,7 @@ func (w *weight) GetToValue(toUnit int) (toValue float64, err error) {
 	case AtomicMassUnit:
 		toValue = baseValue * 6.022136652e+26
 	default:
-		err = InvalidUnitErr
+		err = ErrInvalidUnit
 	}
 
 	return
