@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNewWeightConv(t *testing.T) {
+func TestNewWeight(t *testing.T) {
 	tests := []struct {
 		fromValue float64
 		fromUnit  int
