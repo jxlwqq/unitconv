@@ -115,8 +115,8 @@ func TestNewWeightConv(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		conv := NewWeightConv(test.fromValue, test.fromUnit, test.toUnit)
-		got := conv.To.Value
+		conv := NewWeight(test.fromValue, test.fromUnit)
+		got, _ := conv.GetToValue(test.toUnit)
 		if diff := math.Abs(got - test.want); diff > 0.01 {
 			t.Errorf("got %f != want %f", got, test.want)
 		}

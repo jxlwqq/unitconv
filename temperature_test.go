@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestTemperatureConv(t *testing.T) {
+func TestTemperature(t *testing.T) {
 	tests := []struct {
 		fromValue float64
 		fromUnit  int
@@ -24,8 +24,8 @@ func TestTemperatureConv(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		conv := NewTemperatureConv(test.fromValue, test.fromUnit, test.toUnit)
-		got := conv.To.Value
+		conv := NewTemperature(test.fromValue, test.fromUnit)
+		got, _ := conv.GetToValue(test.toUnit)
 		if diff := math.Abs(got - test.want); diff > 0.01 {
 			t.Errorf("got %f != want %f", got, test.want)
 		}

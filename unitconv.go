@@ -1,11 +1,14 @@
 package unitconv
 
-type From struct {
-	Value float64
-	Unit  int
+import "errors"
+
+var InvalidUnitErr = errors.New("invalid unit")
+
+type Unitconv interface {
+	GetToValue(toUnit int) (toValue float64, err error)
 }
 
-type To struct {
-	Value float64
-	Unit  int
+type unitconv struct {
+	fromValue float64
+	fromUnit  int
 }

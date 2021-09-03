@@ -136,8 +136,8 @@ func TestLengthConv(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		conv := NewLengthConv(test.fromValue, test.fromUnit, test.toUnit)
-		got := conv.To.Value
+		conv := NewLength(test.fromValue, test.fromUnit)
+		got, _ := conv.GetToValue(test.toUnit)
 		if diff := math.Abs(got - test.want); diff > 0.0001 {
 			t.Errorf("got %f != want %f", got, test.want)
 		}
